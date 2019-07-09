@@ -10,10 +10,11 @@ class App extends Component {
   }
   //liefcycle methods, as soon as the component is mounted, this will be fired
   async componentDidMount() {
+    //Global variables inside .env.local
+    console.log(process.env.REACT_APP_GITHUB_CLIENT_ID);
     this.setState({ loading: true })
-    const res = await axios.get('https://api.github.com/users');
+    const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
     this.setState({ users: res.data, loading: false });
-    console.log(res.data);
   }
   render() {
     return (
