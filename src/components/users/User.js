@@ -6,7 +6,7 @@ import GithubContext from '../../context/github/githubContext';
 
 const User = ({ match }) => {
     const githubContext = useContext(GithubContext);
-    const { loading, user, getUser, getUserRepos } = githubContext;
+    const { loading, user, getUser, getUserRepos, repos } = githubContext;
     //same functionality as componentDidMount()
     useEffect(() => {
         getUser(match.params.login);
@@ -78,7 +78,7 @@ const User = ({ match }) => {
                 <div className="badge badge-dark">Public Gists: {public_gists}</div>
             </div>
 
-            <Repos />
+            <Repos repos={repos} />
         </Fragment>
     )
 }
