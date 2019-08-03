@@ -3,7 +3,6 @@ import Spinner from '../layout/Spinner';
 import Repos from '../repos/Repos';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 export class User extends Component {
     componentDidMount() {
         this.props.getUser(this.props.match.params.login);

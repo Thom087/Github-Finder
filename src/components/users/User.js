@@ -10,7 +10,8 @@ const User = ({ user, loading, repos, getUser, getUserRepos, match }) => {
         getUser(match.params.login);
         getUserRepos(match.params.login);
         // eslint-disable-next-line
-    }, []); //example when the repos change [repos] to run this once do an empty []
+    }, []);
+    //example when the repos change [repos] to run this once do an empty []
 
     const {
         name,
