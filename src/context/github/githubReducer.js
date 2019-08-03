@@ -12,8 +12,7 @@ export default (state, action) => {
             return {
                 ...state, //current state
                 users: action.payload,
-                loading: false,
-                showClear: true
+                loading: false
             }
         case SET_LOADING:
             return {
@@ -24,7 +23,13 @@ export default (state, action) => {
             return {
                 ...state,
                 users: [],
-                showClear: false
+                loading: false
+            }
+        case GET_USER:
+            return {
+                ...state,
+                user: action.payload,
+                loading: false
             }
         default:
             return state;
