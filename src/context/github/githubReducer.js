@@ -12,12 +12,19 @@ export default (state, action) => {
             return {
                 ...state, //current state
                 users: action.payload,
-                loading: false
+                loading: false,
+                showClear: true
             }
         case SET_LOADING:
             return {
                 ...state, // copies the whole state
-                loading: true
+                loading: true,
+            }
+        case CLEAR_USERS:
+            return {
+                ...state,
+                users: [],
+                showClear: false
             }
         default:
             return state;
